@@ -37,7 +37,7 @@ build: false
 test_script:
   - if defined TOXENV tox
 # Commented out as require GTK3 to create package.
- after_test:
+after_test:
  - if not defined TOXENV python setup.py build && python setup.py install
  - cd %APPVEYOR_BUILD_FOLDER%\\packaging\\win32
  - if not defined TOXENV deluge-bbfreeze.py debug
