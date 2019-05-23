@@ -37,17 +37,17 @@ build: false
 test_script:
   - if defined TOXENV tox
 # Commented out as require GTK3 to create package.
-# after_test:
-# - if not defined TOXENV python setup.py build && python setup.py install
-# - cd %APPVEYOR_BUILD_FOLDER%\\packaging\\win32
-# - if not defined TOXENV deluge-bbfreeze.py debug
-# - "SET PATH=C:\\Program Files (x86)\\NSIS;%PATH%"
-# - if not defined TOXENV makensis deluge-win32-installer.nsi
-# - if not defined TOXENV 7z a deluge-win32.zip build-win32 "-x!*.exe"
+ after_test:
+ - if not defined TOXENV python setup.py build && python setup.py install
+ - cd %APPVEYOR_BUILD_FOLDER%\\packaging\\win32
+ - if not defined TOXENV deluge-bbfreeze.py debug
+ - "SET PATH=C:\\Program Files (x86)\\NSIS;%PATH%"
+ - if not defined TOXENV makensis deluge-win32-installer.nsi
+ - if not defined TOXENV 7z a deluge-win32.zip build-win32 "-x!*.exe"
 
-# artifacts:
-# - path: packaging\win32\deluge-win32.zip
-# - path: packaging\win32\build-win32\*.exe
+ artifacts:
+ - path: packaging\win32\deluge-win32.zip
+ - path: packaging\win32\build-win32\*.exe
 
 #on_success:
 #
