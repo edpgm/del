@@ -1,7 +1,7 @@
 include *.md
 include AUTHORS
 include LICENSE
-# include RELEASE-VERSION
+include RELEASE-VERSION
 include msgfmt.py
 include minify_web_js.py
 include version.py
