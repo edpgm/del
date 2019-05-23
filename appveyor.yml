@@ -4,8 +4,8 @@ environment:
   PYTHON: "C:\\Python36-x64"
   APPVEYOR_SAVE_CACHE_ON_ERROR: true
 
-  matrix:
-    - TOXENV: py36
+  #matrix:
+   # - TOXENV: py36
 
 pull_requests:
   do_not_increment_build_number: true
