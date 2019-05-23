@@ -45,7 +45,7 @@ after_test:
  - if not defined TOXENV makensis deluge-win32-installer.nsi
  - if not defined TOXENV 7z a deluge-win32.zip build-win32 "-x!*.exe"
 
- artifacts:
+artifacts:
  - path: packaging\win32\deluge-win32.zip
  - path: packaging\win32\build-win32\*.exe
 
